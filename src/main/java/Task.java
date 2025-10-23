@@ -1,6 +1,6 @@
 public class Task {
     // declare variable description and isCompleted
-    private String description;
+    private final String description;
     private boolean isCompleted;
 
     //Constructor for both variable (sets isCompleted false as standard)
