@@ -42,7 +42,7 @@ git clone https://github.com/noahwie/cmd-ToDo-List.git
 Then navigate to the into the project folder: 
 
 ```bash
-cd cmdToDoList\src\main\java
+cd cmd-ToDo-List/src/main/java
 ```
 
 ### 2. Compile the Java Files
