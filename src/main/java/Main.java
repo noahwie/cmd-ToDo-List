@@ -5,9 +5,10 @@ public class Main {
     // list which stores all the tasks
     static ArrayList<Task> tasks = new ArrayList<>();
 
+
     public static void main(String[] args) {
-        //Declaring the scanner
         Scanner scanner = new Scanner(System.in);
+
 
         //Variable that decides if program should keep on running
         boolean running = true;
@@ -17,7 +18,7 @@ public class Main {
             // Displays starting menu
             displayMenu();
 
-            //Checks if User Input is a Int or not if it isn't an int it consumes it and gives out a message
+            //Checks if User Input is an Int or not if it isn't an int it consumes it and gives out a message
             while (!scanner.hasNextInt()) {
                 scanner.next();
                 System.out.println("Please enter a number between 1 and 5");
@@ -26,7 +27,7 @@ public class Main {
             //Declaring to read one line of user input
             int input = scanner.nextInt();
 
-            // Checks if iput is above 0 and below 6
+            // Checks if input is above 0 and below 6
             if (input < 1 || input > 5) {
                 System.out.println("Please enter a number between 1 and 5");
             } else {
@@ -68,8 +69,9 @@ public class Main {
     }
 
     public static void addTask() {
-        //prompt user to type in a task
+        //Declaring the scanner
         Scanner scanner = new Scanner(System.in);
+        //prompt user to type in a task
         System.out.println("Please enter the description of the task you would like to add");
 
         // read prompt and safe it in a variable
@@ -82,7 +84,7 @@ public class Main {
         tasks.add(task);
 
         // letting user know task was added
-        System.out.println("Task added succesfully");
+        System.out.println("Task added successfully");
     }
 
     public static void viewTasks() {
@@ -98,18 +100,38 @@ public class Main {
     }
 
     public static void markTaskAsCompleted() {
-        //prompt user to mark a task as completed out of arrayList
-        System.out.println("Please enter the task number you would like to mark as completed");
-//        Scanner scanner = new Scanner(System.in);
-//        int taskNumber = scanner.nextInt();
-//        for (int i = 0; i < tasks.size(); i++) {
-//            if (taskNumber - 1 == i) {
-//                Task.markCompleted();
-//                Task.isComplete();
-//            } else {
-//                System.out.println("there is no task with number " + taskNumber);
-//            }
-//        }
+        //Declaring the scanner
+        Scanner scanner = new Scanner(System.in);
+
+        if (tasks.isEmpty()) {
+            System.out.println("Before you can mark a task as completed you should add a task first ;)");
+        } else {
+            System.out.println("Please enter the number of the task you would like to mark as completed");
+
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i));
+            }
+
+            //Checks if User Input is an Int or not if it isn't an int it consumes it and gives out a message
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                System.out.println("please enter a number of a displayed task");
+            }
+
+            // Scans user input
+            int taskNumber = scanner.nextInt();
+
+            // Loops through tasks and checks if entered number - 1 matches an index
+            for (int i = 0; i < tasks.size(); i++) {
+                if (taskNumber - 1 == i) {
+                    Task task = tasks.get(i);
+                    task.markCompleted();
+                } else {
+                    System.out.println("No task found with number " + taskNumber);
+                }
+            }
+            System.out.println("Task " + taskNumber + " marked succesfully ");
+        }
     }
 
     public static void deleteTask() {
@@ -126,7 +148,7 @@ public class Main {
                 System.out.println((i + 1) + ". " + tasks.get(i));
             }
 
-            //Checks if User Input is a Int or not if it isn't an int it consumes it and gives out a message
+            //Checks if User Input is an Int or not if it isn't an int it consumes it and gives out a message
             while (!scanner.hasNextInt()) {
                 scanner.next();
                 System.out.println("please enter a number of a displayed task");
