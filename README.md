@@ -139,6 +139,6 @@ Task 1 marked successfully
 
 ## Author 
 
-Developed by Noah Wieschmann 
-GitHub: noahwie 
-LinkedIn: Noah Wieschmann 
+- Developed by Noah Wieschmann 
+- GitHub: noahwie 
+- LinkedIn: Noah Wieschmann 
