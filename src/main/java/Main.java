@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     // list which stores all the tasks
-    static ArrayList<Task> tasks = new ArrayList<Task>();
+    static ArrayList<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         //Declaring the scanner
@@ -85,11 +85,36 @@ public class Main {
     }
 
     public static void markTaskAsCompleted() {
-        //prompt user to mark a task as completed out of arrayList
+//        //prompt user to mark a task as completed out of arrayList
+//        System.out.println("Please enter the task number you would like to mark as completed");
+//        Scanner scanner = new Scanner(System.in);
+//        int taskNumber = scanner.nextInt();
+//        for (int i = 0; i < tasks.size(); i++) {
+//            if (taskNumber - 1 == i) {
+//                markCompleted();
+//                isComplete();
+//            } else {
+//                System.out.println("there is no task with number " + taskNumber);
+//            }
+//        }
     }
 
     public static void deleteTask() {
         //prompt user to delete a task out of arraylist
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the task number you would like to delete");
+
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + ". " + tasks.get(i));
+        }
+
+        int taskNumber = scanner.nextInt();
+        for (int i = 0; i < tasks.size(); i++) {
+            if (taskNumber - 1  == i) {
+                tasks.remove(i);
+            }
+        }
+        System.out.println("Task " + taskNumber + " deleted succesfully ");
     }
 
 
