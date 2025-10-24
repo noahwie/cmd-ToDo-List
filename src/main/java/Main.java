@@ -60,6 +60,7 @@ public class Main {
 
     private static void displayMenu() {
         //Printing menu
+        System.out.println("");
         System.out.println("=== TO-DO LIST ===");
         System.out.println("1. Add a new task");
         System.out.println("2. View Tasks");
@@ -69,6 +70,7 @@ public class Main {
     }
 
     public static void addTask() {
+        System.out.println("");
         //Declaring the scanner
         Scanner scanner = new Scanner(System.in);
         //prompt user to type in a task
@@ -88,6 +90,7 @@ public class Main {
     }
 
     public static void viewTasks() {
+        System.out.println("");
         //tasks list is empty shows message
         if (tasks.isEmpty()) {
             System.out.println("No tasks found");
@@ -100,6 +103,7 @@ public class Main {
     }
 
     public static void markTaskAsCompleted() {
+        System.out.println("");
         //Declaring the scanner
         Scanner scanner = new Scanner(System.in);
 
@@ -135,6 +139,7 @@ public class Main {
     }
 
     public static void deleteTask() {
+        System.out.println("");
         // Checks if there evene are any tasks to be deleted
         if (tasks.isEmpty()) {
             System.out.println("before you can delete a task you should add a task first ;)");
