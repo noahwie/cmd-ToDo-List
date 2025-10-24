@@ -18,11 +18,15 @@ Perfect for learning Java basics suhc as classes, loops, input handling and Arra
 
 ## Project Structure 
 
-cmdToDoList/src/main/java
-|
-|--Main.java
-|--Task.java
-
+```bash
+cmdToDoList/
+├── README.md
+└── src/
+    └── main/
+        └── java/
+            ├── Main.java
+            └── Task.java
+```
 --- 
 
 ## Getting Started 
